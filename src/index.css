@@ -52,4 +52,18 @@ body {
   .game-info {
     margin-left: 20px;
   }
+
+  .btn-link:focus,
+.btn-link:active:focus{
+    outline:none !important;
+    box-shadow: none !important; 
+}
+
+.btn-link:focus{
+    text-decoration:none;
+}
+
+.black {
+  color: black;
+}
   

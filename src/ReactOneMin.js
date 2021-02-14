@@ -13,7 +13,7 @@ const ReactOneMinHeader = () => {
     return (
         <>
              <h2>Add React in One Minute</h2>
-            <p>This page a simple like button.</p>
+            <p>This page is an example of a simple like button.</p>
         </>
     );
 }

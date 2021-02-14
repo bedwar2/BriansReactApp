@@ -10,12 +10,14 @@ import Game from './Game';
 import GithubCardsApp from './Github_Cards'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
+import './index.css';
 //import { Nav, NavDropdown, Dropdown } from 'react-bootstrap'
 import { Dropdown } from 'react-bootstrap'
 import ButtonExample from './ButtonExample';
 import StarMatch from './Stars';
 import DropdownItem from "react-bootstrap/esm/DropdownItem";
 import ReactOneMin from './ReactOneMin'
+import { AuthorQuiz } from "./AuthorQuiz/AuthorQuiz";
 
 export default function App() {
     const [starMatchGameId, setStarMatchGameId] = useState(1);
@@ -47,10 +49,13 @@ export default function App() {
           <Dropdown.Menu>
             <DropdownItem><Link to="/starmatch">Star Match</Link></DropdownItem>
             <DropdownItem><Link to="/button">Button Example</Link></DropdownItem>
-            <DropdownItem><Link  to="/game">Game</Link></DropdownItem>
+            <DropdownItem><Link  to="/game">Tic Tac Toe</Link></DropdownItem>
             <DropdownItem><Link  to="/cards">Github Cards</Link></DropdownItem>
           </Dropdown.Menu>
         </Dropdown>
+      </li>
+      <li className="nav-item active">
+        <Link className="nav-link" to="/authorQuiz">Author Quiz</Link>
       </li>
       <li className="nav-item">
         <Link className="nav-link" to="/about">About</Link>
@@ -81,6 +86,9 @@ export default function App() {
             </Route>
             <Route path="/reactOneMin">
                 <ReactOneMin></ReactOneMin>
+            </Route>
+            <Route path="/authorQuiz">
+              <AuthorQuiz></AuthorQuiz>
             </Route>
             <Route path="/">
               <Home />

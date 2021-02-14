@@ -1,31 +1,40 @@
 import React from 'react';
+import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
 
 const e = React.createElement;
 
 export class LikeButton extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { liked: false };
+    this.state = { liked: false, likeCount: 0 };
   }
 
   getLikeButtonClass() {
     if (this.state.liked) {
       return "fa fa-thumbs-up text-success";
     } else {
-      return "fa fa-thumbs-up";
+      return "fa fa-thumbs-up black";
     }
   }
 
   toggleLiked() {
     this.setState(prevState => ({
-      liked: !prevState.liked
+      liked: !prevState.liked,
+      likeCount: !prevState.liked ? 1 : 0
     }));
+  }
+
+  getLikeText() {
+    if (this.state.likeCount > 0) {
+      return <span className="badge badge-primary">{ this.state.likeCount }</span>;
+    } else 
+      return "";
   }
 
   render() {
     //if (this.state.liked) {
       return (
-        <span onClick={() => this.toggleLiked() } className={this.getLikeButtonClass()}></span>
+        <><button onClick={() => this.toggleLiked() } className="btn btn-link" ><span className={this.getLikeButtonClass()}></span> </button>{ this.getLikeText() }</>
       );
       
       //'You liked comment number ' + this.props.commentID;

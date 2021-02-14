@@ -123,7 +123,8 @@ export default function StarMatch(props) {
     <div className="container-fluid">
 
         <div className="star-help">
-          Pick 1 or more numbers that sum to the number of stars
+          Pick 1 or more numbers that sum to the number of stars.  Once a number is used, it can't be reused.  
+          Try to use all numbers before timer runs out.  For example, if there are 12 stars but the number 12 is already used but 10 and 2 are unused, you can click 10 and 2.
         </div>
         <div className="star-game">
         <div className="star-body">

@@ -290,6 +290,8 @@ function Square(props) {
         }
       return (
         <div className="container">
+            <h2>Tic Tac Toe</h2>
+            <p>Greetings Professor Falken, shall we play a game?</p>
             <Prompt
                 when={this.state.history.length > 1 && !this.state.gameOver }
                 message="You are in the middle of a game, are you sure you want to leave?">
