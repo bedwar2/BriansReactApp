@@ -1,0 +1,63 @@
+.star-game {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .star-body {
+    display: flex;
+  }
+  
+  .star-help {
+    color: #666;
+    margin: 10px;
+    text-align: center;
+  }
+  
+  .star-left {
+    text-align: center;
+    width: 50%;
+    border: thin solid #ddd;
+  }
+  
+  .star-right {
+    text-align: center;
+    padding: 10px;
+    width: 50%;
+    border: thin solid #ddd;
+  }
+  
+  .star {
+      display: inline-block;
+    margin: 0 15px;
+  }
+  
+  .star:after {
+    content: "\2605";
+    font-size: 45px;
+  }
+  
+  .star-number {
+    background-color: #eee;
+    border: thin solid #ddd;
+    width: 45px;
+    height: 45px;
+    margin: 10px;
+    font-size: 25px;
+  }
+  
+  .star-number:focus, .star-number:active {
+    outline: none;
+    border: thin solid #ddd;
+  }
+  
+  .star-timer {
+      color: #666;
+    margin-top: 3px;
+    margin-left: 3px;
+  }
+  
+  .star-game-done .message {
+    font-size: 250%;
+    font-weight: bold;
+    margin: 15px;
+  }

@@ -1,0 +1,1 @@
+export const starColors = ["darkgreen", "darkblue", "purple", "darkred", "darkorange"] ;
