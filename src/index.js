@@ -18,6 +18,7 @@ import StarMatch from './Stars';
 import DropdownItem from "react-bootstrap/esm/DropdownItem";
 import ReactOneMin from './ReactOneMin'
 import { AuthorQuiz } from "./AuthorQuiz/AuthorQuiz";
+import { Adder } from "./Adder/Adder";
 
 export default function App() {
     const [starMatchGameId, setStarMatchGameId] = useState(1);
@@ -54,8 +55,17 @@ export default function App() {
           </Dropdown.Menu>
         </Dropdown>
       </li>
-      <li className="nav-item active">
-        <Link className="nav-link" to="/authorQuiz">Author Quiz</Link>
+      <li className="nav-item dropdown">
+        <Dropdown>
+          <Dropdown.Toggle variant="primary">
+            React Fundamentals
+          </Dropdown.Toggle>
+          <Dropdown.Menu>
+            <DropdownItem><Link to="/adder">Adder</Link></DropdownItem>
+            <DropdownItem><Link to="/authorQuiz">Author Quiz</Link></DropdownItem>          
+          </Dropdown.Menu>
+        </Dropdown>
+        
       </li>
       <li className="nav-item">
         <Link className="nav-link" to="/about">About</Link>
@@ -86,6 +96,9 @@ export default function App() {
             </Route>
             <Route path="/reactOneMin">
                 <ReactOneMin></ReactOneMin>
+            </Route>
+            <Route path="/adder">
+              <Adder></Adder>
             </Route>
             <Route path="/authorQuiz">
               <AuthorQuiz></AuthorQuiz>

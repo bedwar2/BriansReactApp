@@ -1,7 +1,7 @@
 import React from 'react';
-import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
+//import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
 
-const e = React.createElement;
+
 
 export class LikeButton extends React.Component {
   constructor(props) {
