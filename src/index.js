@@ -10,10 +10,12 @@ import Game from './Game';
 import GithubCardsApp from './Github_Cards'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
-import { Nav, NavDropdown, Dropdown } from 'react-bootstrap'
+//import { Nav, NavDropdown, Dropdown } from 'react-bootstrap'
+import { Dropdown } from 'react-bootstrap'
 import ButtonExample from './ButtonExample';
 import StarMatch from './Stars';
 import DropdownItem from "react-bootstrap/esm/DropdownItem";
+import ReactOneMin from './ReactOneMin'
 
 export default function App() {
     const [starMatchGameId, setStarMatchGameId] = useState(1);
@@ -34,9 +36,9 @@ export default function App() {
       <li className="nav-item active">
         <Link className="nav-link" to="/" >Home</Link>
       </li>      
-      <li className="nav-item">
-        <Link className="nav-link" to="/about">About</Link>
-      </li>
+      <li className="nav-item active">
+        <Link className="nav-link" to="/reactOneMin">React 1 Minute</Link>
+      </li>      
       <li className="nav-item dropdown">
         <Dropdown>
           <Dropdown.Toggle variant="primary" id="dropdown-basic">
@@ -49,6 +51,9 @@ export default function App() {
             <DropdownItem><Link  to="/cards">Github Cards</Link></DropdownItem>
           </Dropdown.Menu>
         </Dropdown>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link" to="/about">About</Link>
       </li>
     </ul>
   </div>
@@ -73,6 +78,9 @@ export default function App() {
             </Route>
             <Route path="/starmatch">
                 <StarMatch key={starMatchGameId} resetGame={() => startNewGame()} />
+            </Route>
+            <Route path="/reactOneMin">
+                <ReactOneMin></ReactOneMin>
             </Route>
             <Route path="/">
               <Home />

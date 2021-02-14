@@ -1,28 +1,48 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 const e = React.createElement;
 
-class LikeButton extends React.Component {
+export class LikeButton extends React.Component {
   constructor(props) {
     super(props);
     this.state = { liked: false };
   }
 
-  render() {
+  getLikeButtonClass() {
     if (this.state.liked) {
-      return 'You liked comment number ' + this.props.commentID;
+      return "fa fa-thumbs-up text-success";
+    } else {
+      return "fa fa-thumbs-up";
     }
+  }
 
+  toggleLiked() {
+    this.setState(prevState => ({
+      liked: !prevState.liked
+    }));
+  }
+
+  render() {
+    //if (this.state.liked) {
+      return (
+        <span onClick={() => this.toggleLiked() } className={this.getLikeButtonClass()}></span>
+      );
+      
+      //'You liked comment number ' + this.props.commentID;
+    //}
+/*
     return e(
       'button',
       { onClick: () => this.setState({ liked: true }) },
       'Like'
-    );
+    ); */
   }
 }
 
+
+
 // Find all DOM containers, and render Like buttons into them.
+/*
 document.querySelectorAll('.like_button_container')
   .forEach(domContainer => {
     // Read the comment ID from a data-* attribute.
@@ -32,3 +52,4 @@ document.querySelectorAll('.like_button_container')
       domContainer
     );
   });
+  */
